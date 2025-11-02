@@ -19,6 +19,7 @@
   --light: #daa3ffff;
 
   --pink: #ff5650;
+  --pink-dark: #c80000;
 
   --blue-dark: #005c91;
   --blue-light: #88c3ff;
@@ -26,6 +27,7 @@
   --orange-light: #ffbf7e;
   --orange: #de7300;
   --green: #00973f;
+  --green-dark: #006526;
 
   /* 폰트 */
   --kor: "Pretendard Variable", "Roboto", Malgun Gothic, "Malgun Gothic", sans-serif;
