@@ -1,0 +1,601 @@
+#root {
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+}
+/* 네브바 */
+.navbar {
+  max-width: 120px;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 10px;
+  box-sizing: border-box;
+
+  background: var(--blue-light);
+}
+.navbar .logo {
+  width: 100%;
+  height: 100px;
+  height: auto;
+
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar .logo img {
+  width: 90%;
+  height: auto;
+  object-fit: contain;
+}
+
+.navbar .menus {
+  margin-top: 30px;
+}
+.navbar .menus ul li {
+  width: 80px;
+  height: 80px;
+
+  border-radius: 10px;
+  margin-bottom: 20px;
+
+  padding: 5px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.navbar .menus ul li.on {
+  background: rgba(255, 255, 255, 0.4);
+}
+.navbar .menus ul li.on p {
+  font-weight: 800;
+  color: var(--main);
+}
+.navbar .menus ul li.on i svg {
+  color: var(--main);
+}
+.navbar .menus ul li p {
+  font-size: 1.2rem;
+  line-height: 120%;
+  letter-spacing: -0.64px;
+  font-weight: 400;
+}
+.navbar .menus ul li i {
+}
+.navbar .menus ul li i svg {
+  width: 30px;
+  height: 30px;
+
+  color: white;
+}
+/* 컨텐츠 */
+.contents {
+  display: flex;
+  gap: 20px;
+
+  width: calc(100% - 120px - 20px);
+}
+/* 컨텐츠 - 연락처 등록 */
+.contents .inner {
+  padding: 20px;
+  box-sizing: border-box;
+}
+.contents .inner > div {
+  align-items: flex-start;
+  width: 100%;
+}
+.add-contact {
+  width: 30%;
+
+  border-right: 1px solid var(--border);
+}
+
+.add-contact div {
+  width: 100%;
+}
+
+.add-contact .img-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-contact .img-wrap .img-box {
+  width: 160px;
+  height: 160px;
+  background: #f0f0f0;
+  border-radius: 100%;
+  overflow: hidden;
+  border: 10px solid var(--blue-light);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 16px;
+}
+.add-contact .img-wrap img {
+  width: 100%;
+  height: auto;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+input[type="file"] {
+  position: relative;
+  width: 80px;
+  height: 36px;
+  padding: 0;
+  color: #fff;
+  border-radius: 4px;
+  background: var(--blue-light);
+  font-size: 0;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+input[type="file"]::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "사진 선택";
+  font-weight: 700;
+  font-size: 14px;
+}
+
+input[type="file"]::file-selector-button {
+  display: none;
+}
+
+input[type="file"]:hover {
+  background: var(--blue-dark);
+  color: var(--white);
+}
+.add-contact button {
+  width: 100%;
+}
+
+/* 컨텐츠 - 연락처 목록 */
+.contact-list {
+  width: 70%;
+
+  overflow-y: auto;
+}
+
+/* 컨텐츠 - 연락처 목록 - 검색 */
+.contact-list .search-section {
+  width: 100%;
+
+  margin-bottom: 40px;
+}
+
+.contact-list .search-section input {
+  width: calc(100% - 100px);
+  height: 48px;
+  line-height: 48px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.contact-list .search-section input::placeholder {
+  font-size: 1rem;
+}
+.contact-list .search-section button {
+  margin-left: 10px;
+
+  width: 80px;
+  height: 48px;
+  line-height: 48px;
+  border-radius: 4px;
+  background: var(--blue-light);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 14px;
+  border: none;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+.contact-list .search-section button:hover {
+  background: var(--blue-dark);
+}
+
+/* 연락처 목록 - 리스트 */
+.list-section {
+  width: 100%;
+}
+.list-section dl {
+  display: flex;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  padding: 30px;
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+.list-section dl + dl {
+  margin-top: 10px;
+}
+.list-section dl dt {
+  width: 160px;
+  height: 160px;
+
+  margin-right: 20px;
+}
+.list-section dl dt img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  object-fit: cover;
+
+  background-color: var(--border);
+}
+.list-section dl dd {
+  width: calc(100% - 180px);
+
+  display: flex;
+
+  transition: all 0.3s ease;
+}
+
+.list-section dl dd .information {
+  width: 100%;
+
+  transition: all 0.3s ease;
+}
+.list-section dl dd .information .contact-name {
+  font-size: 1.6rem;
+  letter-spacing: -0.64px;
+  font-weight: 700;
+  color: var(--black);
+  word-break: break-all;
+
+  margin-bottom: 16px;
+}
+.list-section dl dd .information p {
+  font-size: 1rem;
+  letter-spacing: -0.64px;
+  font-weight: 400;
+
+  position: relative;
+
+  padding-left: 30px;
+  box-sizing: border-box;
+
+  word-break: break-all;
+}
+.list-section dl dd .information p + p {
+  margin-top: 10px;
+}
+.list-section dl dd .information p span {
+  color: var(--main);
+
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.list-section dl dd .information .contact-phone {
+  letter-spacing: 0 !important;
+}
+
+.list-section dl dd .actions {
+  width: 0;
+  padding: 10px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+
+  opacity: 0;
+
+  transition: all 0.3s ease;
+}
+
+.list-section dl:hover dd .information {
+  width: calc(100% - 120px);
+}
+.list-section dl:hover dd .actions {
+  width: 120px;
+  padding: 10px;
+
+  display: flex;
+  opacity: 1;
+}
+
+.list-section dl dd .actions button {
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.list-section dl dd .actions .edit {
+  background: var(--green);
+  color: var(--white);
+}
+.list-section dl dd .actions .delete {
+  background: var(--pink);
+  color: var(--white);
+}
+
+.list-section dl dd .actions .edit:hover {
+  background: var(--green-dark);
+}
+.list-section dl dd .actions .delete:hover {
+  background: var(--pink-dark);
+}
+.no-result {
+  font-size: 1.6rem;
+  letter-spacing: -0.64px;
+  box-sizing: border-box;
+  color: var(--main);
+  font-weight: 400;
+}
+
+/* 수정 모달 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  width: 600px;
+  max-width: 90%;
+}
+
+.modal-form label {
+  display: block;
+  margin-top: 16px;
+  font-weight: bold;
+}
+
+.modal-form input {
+  width: 100%;
+  box-sizing: border-box;
+
+  margin-top: 10px;
+}
+.normal-input {
+  height: 40px;
+  line-height: 40px;
+  padding: 5px;
+  box-sizing: border-box;
+
+  font-size: 14px;
+  letter-spacing: -0.64px;
+
+  font-weight: 400 !important;
+}
+.modal-form textarea {
+  width: 100%;
+
+  padding: 5px;
+  box-sizing: border-box;
+  height: 40px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.preview-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+/*******************************************************************************
+    @media  ~980px               
+*******************************************************************************/
+@media all and (max-width: 980px) {
+  #root {
+    height: 100%;
+  }
+  /* 네브바 */
+  .navbar {
+    max-width: 100%;
+
+    padding: 10px;
+    height: 100px;
+
+    position: fixed;
+    flex-direction: row;
+
+    z-index: 999;
+  }
+  .navbar .logo {
+    height: 80px;
+    width: 80px;
+  }
+
+  .navbar .menus {
+    margin-top: 0;
+    margin-left: 20px;
+  }
+  .navbar .menus ul {
+    display: flex;
+    align-items: center;
+  }
+  .navbar .menus ul li {
+    width: 60px;
+    height: 60px;
+
+    margin-bottom: 0;
+    margin-right: 16px;
+  }
+  .navbar .menus ul li.on {
+  }
+
+  .navbar .menus ul li p {
+    letter-spacing: -0.58px;
+  }
+
+  .navbar .menus ul li i svg {
+    width: 26px;
+    height: 26px;
+  }
+  /* 컨텐츠 */
+  .contents {
+    width: 100%;
+    flex-wrap: wrap;
+
+    padding-top: 100px;
+    box-sizing: border-box;
+  }
+  /* 컨텐츠 - 연락처 등록 */
+  .contents .inner {
+    padding: 20px;
+  }
+  .contents .inner > div {
+    align-items: flex-start;
+  }
+  .add-contact {
+    width: 100%;
+    border-right: none;
+  }
+
+  .add-contact div {
+    width: 100%;
+  }
+
+  .add-contact .img-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .add-contact .img-wrap .img-box {
+    width: 120px;
+    height: 120px;
+
+    margin-bottom: 16px;
+
+    border: 8px solid var(--blue-light);
+  }
+  /* 컨텐츠 - 연락처 목록 */
+  .contact-list {
+    width: 100%;
+  }
+  /* 컨텐츠 - 연락처 목록 - 검색 */
+  .contact-list .search-section {
+    margin-bottom: 30px;
+  }
+
+  .contact-list .search-section input {
+    width: calc(100% - 100px);
+    height: 48px;
+    line-height: 48px;
+  }
+  .contact-list .search-section input::placeholder {
+    font-size: 1rem;
+  }
+  .contact-list .search-section button {
+    margin-left: 10px;
+
+    width: 80px;
+    height: 48px;
+    line-height: 48px;
+  }
+
+  /* 연락처 목록 - 리스트 */
+
+  .list-section dl {
+    padding: 26px;
+  }
+
+  .list-section dl dt {
+    width: 120px;
+    height: 120px;
+  }
+
+  .list-section dl dd {
+    width: calc(100% - 140px);
+  }
+
+  .list-section dl dd .information .contact-name {
+    font-size: 1.45rem;
+    letter-spacing: -0.56px;
+  }
+  .list-section dl dd .information p {
+    letter-spacing: -0.56px;
+
+    padding-left: 26px;
+  }
+
+  .list-section dl:hover dd .information {
+    width: calc(100% - 100px);
+  }
+  .list-section dl:hover dd .actions {
+    width: 100px;
+    padding: 10px;
+  }
+
+  .list-section dl dd .actions button {
+    width: 80px;
+  }
+
+  .no-result {
+    font-size: 1.45rem;
+    letter-spacing: -0.56px;
+  }
+
+  .modal-content {
+    padding: 26px;
+  }
+
+  .normal-input {
+    font-size: 14px;
+    letter-spacing: -0.56px;
+  }
+
+  .preview-image {
+    width: 60px;
+    height: 60px;
+  }
+}
