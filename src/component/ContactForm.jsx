@@ -61,7 +61,7 @@ const ContactForm = () => {
       <TextField
         id="phone-number"
         label="전화번호"
-        type="number"
+        type="tel"
         variant="outlined"
         value={phoneNumber}
         onChange={(e) => setPhoneNumber(e.target.value)}
