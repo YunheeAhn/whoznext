@@ -14,13 +14,20 @@ const ContactList = () => {
   const handleSearch = () => {
     setSearchTerm(inputValue.trim());
   };
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
 
   const filteredContacts = searchTerm
-    ? phoneBook.filter(
-        (item) =>
-          item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          item.phoneNumber.includes(searchTerm)
-      )
+    ? phoneBook.filter((item) => {
+        const lowerName = item.name.toLowerCase();
+        const lowerPhone = String(item.phoneNumber).toLowerCase();
+        const keyword = searchTerm.trim().toLowerCase();
+
+        return lowerName.includes(keyword) || lowerPhone.includes(keyword);
+      })
     : phoneBook;
 
   return (
@@ -30,6 +37,7 @@ const ContactList = () => {
           type="text"
           placeholder="이름 또는 전화번호 검색"
           value={inputValue}
+          onKeyDown={handleKeyDown}
           onChange={(e) => setInputValue(e.target.value)}
         />
         <button onClick={handleSearch}>검색</button>
